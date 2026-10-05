@@ -35,10 +35,10 @@ export const publicRoutes = [
   "about","bulk-orders","careers","cart","checkout","contact","corporate-gifts","custom-branding",
   "employee-gifting","event-gifts","faq","gift-collections","gift-finder","personalised-gifts",
   "products","project-gallery","quote-shortlist","request-a-quote","request-a-sample","reviews",
-  "sustainability","shipping-delivery","terms-and-conditions"
+  "sustainability","shipping-delivery","terms-and-conditions","privacy-policy","procurement-support","refund-policy","values"
 ];
 
-export const specialAreas = ["admin","dashboard","login","register","forgot-password","reset-password"];
+export const specialAreas = ["admin","dashboard","login","register","forgot-password","reset-password","auth"];
 
 export const pageCopy: Record<string, { eyebrow: string; title: string; intro: string; cta?: string }> = {
   about: { eyebrow: "About Sterling Prime", title: "A gifting partner built around the brief.", intro: "Sterling Prime combines product curation, branding and fulfilment into one considered corporate workflow.", cta: "Start a brief" },
@@ -48,7 +48,7 @@ export const pageCopy: Record<string, { eyebrow: string; title: string; intro: s
   checkout: { eyebrow: "Checkout", title: "A clearer path to completion.", intro: "Your secure checkout flow remains connected to the production commerce experience.", cta: "Open secure checkout" },
   contact: { eyebrow: "Contact", title: "Bring us the occasion.", intro: "Tell us the audience, quantity, budget and timing. We will shape the shortlist.", cta: "Send your brief" },
   "corporate-gifts": { eyebrow: "Corporate gifting", title: "Curated gifts for the people who move the business forward.", intro: "Executive, employee and client gifting with a stronger point of view.", cta: "Explore the catalogue" },
-  "custom-branding": { eyebrow: "Custom branding", title: "Make the packaging part of the experience.", intro: "From logo placement to presentation details, branding is handled with restraint.", cta: "Discuss branding" },
+  "custom-branding": { eyebrow: "Custom branding", title: "Make the packaging part of the experience.", intro: "From logo placement to presentation, branding is handled with restraint.", cta: "Discuss branding" },
   "employee-gifting": { eyebrow: "Employee gifting", title: "Thoughtful at every stage of the employee journey.", intro: "Welcome kits, recognition moments and programmes designed for real teams.", cta: "Build an employee programme" },
   "event-gifts": { eyebrow: "Events & conferences", title: "Useful things. Better remembered.", intro: "Event kits and branded merchandise aligned to audience, quantities and deadlines.", cta: "Plan an event kit" },
   faq: { eyebrow: "Frequently asked", title: "The practical questions, without the visual noise.", intro: "A calmer reference for quantities, branding, timing, delivery and support." },
@@ -63,5 +63,9 @@ export const pageCopy: Record<string, { eyebrow: string; title: string; intro: s
   reviews: { eyebrow: "Customer feedback", title: "The experience after delivery matters too.", intro: "See the kinds of outcomes teams look for when choosing a gifting partner." },
   sustainability: { eyebrow: "Sustainability", title: "Better choices, considered through the whole brief.", intro: "Product choice, packaging and fulfilment decisions can all be part of a more responsible programme." },
   "shipping-delivery": { eyebrow: "Shipping & delivery", title: "Delivery is part of the design.", intro: "Coordinated dispatch, tracking and programme support for corporate timelines." },
-  "terms-and-conditions": { eyebrow: "Terms", title: "Clear rules make better business.", intro: "Review the commercial terms for the Sterling service." }
+  "terms-and-conditions": { eyebrow: "Terms", title: "Clear rules make better business.", intro: "Review the commercial terms for the Sterling service." },
+  "privacy-policy": { eyebrow: "Privacy", title: "Your information should stay yours.", intro: "A clear reference for how information is handled." },
+  "procurement-support": { eyebrow: "Procurement support", title: "Less friction between shortlist and approval.", intro: "Quoting, documentation, quantities and delivery details organised for business buyers.", cta: "Talk to procurement" },
+  "refund-policy": { eyebrow: "Refund policy", title: "Clear commercial expectations.", intro: "Review the applicable refund and cancellation approach." },
+  values: { eyebrow: "Our values", title: "Good work starts with how you work.", intro: "Thoughtful curation, honest recommendations, reliable delivery and respect for the people on the other side of the brief." }
 };
