@@ -32,7 +32,8 @@ test.describe("editorial route smoke tests", () => {
     expect(after).toBeLessThanOrEqual(before);
   });
 
-  test("mobile menu opens", async ({ page }) => {
+  test("mobile menu opens", async ({ page, isMobile }) => {
+    test.skip(!isMobile, "mobile-only interaction");
     await page.goto("/");
     await page.getByRole("button", { name: "Open menu" }).click();
     await expect(page.getByRole("navigation", { name: "Mobile navigation" })).toBeVisible();
