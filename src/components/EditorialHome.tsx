@@ -1,131 +1,145 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-import { products } from "@/lib/site";
 
-const images = {
-  hero: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=2200&q=86",
-  statement: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1700&q=84",
-  workA: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?auto=format&fit=crop&w=1600&q=84",
-  workB: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1500&q=84",
-  workC: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1500&q=84"
+const visual = {
+  hero: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=2200&q=88",
+  print: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1600&q=88",
+  packaging: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1600&q=88",
+  notebook: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=88",
 };
 
-const moments = [
-  ["01", "Employee welcome", "/employee-gifting", "Make day one feel considered."],
-  ["02", "Leadership & clients", "/corporate-gifts", "Quietly premium, easy to approve."],
-  ["03", "Festive programmes", "/gift-collections", "Scale the volume without the generic feel."],
-  ["04", "Events & conferences", "/event-gifts", "Useful pieces people keep after the event."]
+const services = [
+  ["01", "Corporate print", "Offset, digital and specialty print built for repeatable quality at scale."],
+  ["02", "Branded gifting", "Useful, premium gifts with branding that feels considered rather than loud."],
+  ["03", "Packaging", "Boxes, sleeves, inserts and finishing that turn a product into a complete experience."],
+  ["04", "Campaign kits", "One coordinated system across print, merchandise, dispatch and delivery."],
+];
+
+const products = [
+  ["01", "Executive kits", "Premium stationery, notebooks and desk essentials."],
+  ["02", "Pharma campaigns", "Branded collateral for launches, conferences and field teams."],
+  ["03", "Festive gifting", "High-volume gifting with a premium presentation."],
 ];
 
 export function EditorialHome() {
   return (
-    <div className="editorial-page">
-      <section className="hero" id="top">
-        <Image src={images.hero} alt="" fill priority sizes="100vw" className="hero-image" />
-        <div className="hero-shade" />
-        <div className="hero-content">
-          <Reveal><p className="eyebrow hero-eyebrow">Sterling Prime / Corporate Gifting</p></Reveal>
-          <Reveal delay={120}><h1>Corporate gifting, <em>composed</em> with intent.</h1></Reveal>
-          <Reveal delay={220}><p className="hero-copy">Thoughtful products, considered branding and dependable delivery—built for teams, clients and moments that matter.</p></Reveal>
-          <Reveal delay={320}>
-            <div className="hero-actions">
-              <Link className="button button--light" href="/products">Explore the catalogue <span>↘</span></Link>
-              <Link className="text-link text-link--light" href="/request-a-quote">Tell us what you need <span>↗</span></Link>
+    <div className="prime-home">
+      <section className="prime-hero" id="top">
+        <div className="prime-hero-bg" />
+        <div className="prime-hero-glow prime-hero-glow-a" />
+        <div className="prime-hero-glow prime-hero-glow-b" />
+        <div className="prime-hero-inner">
+          <Reveal><p className="prime-eyebrow">STERLING PRIME / PRINT × GIFT × BRAND</p></Reveal>
+          <Reveal delay={100}><h1>Make the <i>ordinary</i><br />worth keeping.</h1></Reveal>
+          <Reveal delay={180}><p className="prime-hero-copy">Premium printing, corporate gifting and branded experiences for companies that care how their work lands.</p></Reveal>
+          <Reveal delay={260}>
+            <div className="prime-actions">
+              <Link href="/products" className="prime-button">Explore Sterling Prime <span>↗</span></Link>
+              <Link href="/request-a-quote" className="prime-text-link">Start a project <span>↗</span></Link>
             </div>
           </Reveal>
         </div>
-        <div className="hero-footer"><span>01 — Curated</span><span>02 — Branded</span><span>03 — Delivered</span></div>
-      </section>
-
-      <section className="statement" id="about">
-        <div className="section-index">01 / The Sterling point of view</div>
-        <div>
-          <Reveal><p className="section-kicker">A different kind of gifting partner</p><h2>Less catalogue. More point of view.</h2></Reveal>
-          <Reveal delay={100}><p className="lead">A more focused route from occasion to shortlist: fewer distractions, stronger curation and a smoother path from idea to delivery.</p></Reveal>
-        </div>
-        <Reveal delay={180}>
-          <div className="statement-note">
-            <span>For procurement teams</span>
-            <strong>Clear decisions. Custom branding. Reliable fulfilment.</strong>
-            <Link className="text-link" href="/about">Read our approach <span>↗</span></Link>
+        <div className="prime-hero-object">
+          <div className="prime-card prime-card-back"><span>OFFSET</span><b>Precision<br/>on paper.</b></div>
+          <div className="prime-card prime-card-main">
+            <div className="prime-card-top"><span>STERLING</span><span>01 / 04</span></div>
+            <div className="prime-card-image"><img src={visual.hero} alt="" /></div>
+            <div className="prime-card-bottom"><b>Made to be noticed.</b><span>PRINT / GIFT / BRAND</span></div>
           </div>
-        </Reveal>
-      </section>
-
-      <section className="image-statement">
-        <div className="image-statement-media"><Image src={images.statement} alt="" fill sizes="(max-width: 900px) 100vw, 60vw" /></div>
-        <div className="image-statement-copy"><p className="section-kicker">Designed around the moment</p><h2>Start with the reason for the gift—not the SKU.</h2><p>Choose by audience, occasion, budget and deadline. The catalogue comes second.</p><Link className="text-link" href="/gift-finder">Find the right direction <span>↗</span></Link></div>
-      </section>
-
-      <section className="collections" id="collections">
-        <div className="section-head">
-          <div><div className="section-index">02 / Collections</div><Reveal><h2>Made for the moment, not the menu.</h2></Reveal></div>
-          <Reveal delay={100}><Link className="text-link" href="/gift-collections">See all collections <span>↗</span></Link></Reveal>
+          <div className="prime-card prime-card-front"><span>PRIME</span><strong>Details<br/>matter.</strong></div>
         </div>
-        <div className="moment-list">
-          {moments.map(([num, title, href, copy], index) => (
-            <Reveal key={num} delay={index * 70}>
-              <Link className="moment-row" href={href}>
-                <span>{num}</span><div><h3>{title}</h3><p>{copy}</p></div><strong>↗</strong>
+        <div className="prime-scroll">SCROLL TO EXPLORE <span>↓</span></div>
+      </section>
+
+      <div className="prime-marquee" aria-hidden="true">
+        <div>PRINT WITH PURPOSE&nbsp;&nbsp; · &nbsp;&nbsp;GIFT WITH INTENT&nbsp;&nbsp; · &nbsp;&nbsp;BRAND WITH CHARACTER&nbsp;&nbsp; · &nbsp;&nbsp;PRINT WITH PURPOSE&nbsp;&nbsp; · &nbsp;&nbsp;GIFT WITH INTENT&nbsp;&nbsp; · &nbsp;&nbsp;</div>
+      </div>
+
+      <section className="prime-intro">
+        <div className="prime-index">01 / THE IDEA</div>
+        <div>
+          <Reveal><p className="prime-kicker">A print partner with a point of view</p><h2>We turn a brief into something people can <i>feel.</i></h2></Reveal>
+          <Reveal delay={120}><p className="prime-lead">Sterling Prime brings print production, corporate gifting, packaging and brand execution under one roof—so the finished piece feels like one idea, not five vendors.</p></Reveal>
+        </div>
+      </section>
+
+      <section className="prime-split">
+        <div className="prime-split-image"><img src={visual.print} alt="Premium printed material" /></div>
+        <div className="prime-split-copy">
+          <span className="prime-kicker">Built for serious volume</span>
+          <h2>Beautiful at 10.<br/><i>Reliable at 10,000.</i></h2>
+          <p>From pharmaceutical collateral to company-wide gifting, every job is engineered around finish, consistency, timelines and practical procurement.</p>
+          <Link href="/about" className="prime-text-link prime-dark">See how we work <span>↗</span></Link>
+        </div>
+      </section>
+
+      <section className="prime-services" id="services">
+        <div className="prime-section-head">
+          <div><div className="prime-index">02 / WHAT WE DO</div><Reveal><h2>One partner.<br/><i>Many touchpoints.</i></h2></Reveal></div>
+          <p>From the first artwork file to the final dispatch.</p>
+        </div>
+        <div className="prime-service-list">
+          {services.map(([num,title,copy], i) => (
+            <Reveal key={num} delay={i * 60}>
+              <Link href="/products" className="prime-service-row">
+                <span>{num}</span><div><h3>{title}</h3><p>{copy}</p></div><b>↗</b>
               </Link>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="approach" id="approach">
-        <div className="section-index">03 / Approach</div>
-        <div className="approach-grid">
-          <Reveal><h2>From brief to beautifully done.</h2></Reveal>
-          <div className="steps">
-            {[["01","Start with the moment","Occasion, audience, budget and timeline."],["02","Shape the shortlist","We narrow the field to choices that make sense."],["03","Brand with restraint","Logo, packaging and presentation without visual noise."],["04","Deliver with confidence","Coordinated dispatch, tracking and aftercare."]].map(([num,title,copy], index) => (
-              <Reveal key={num} delay={index * 70}><article className="step"><span>{num}</span><h3>{title}</h3><p>{copy}</p></article></Reveal>
+      <section className="prime-showcase">
+        <div className="prime-showcase-image"><img src={visual.packaging} alt="Branded packaging" /></div>
+        <div className="prime-showcase-copy">
+          <span className="prime-kicker">THE PRIME STANDARD</span>
+          <h2>Good design gets attention.<br/><i>Good execution earns trust.</i></h2>
+          <div className="prime-metrics"><div><strong>01</strong><span>CONSISTENT</span></div><div><strong>02</strong><span>SCALABLE</span></div><div><strong>03</strong><span>ON-TIME</span></div></div>
+        </div>
+      </section>
+
+      <section className="prime-products" id="collections">
+        <div className="prime-section-head">
+          <div><div className="prime-index">03 / SIGNATURES</div><Reveal><h2>A few things<br/><i>we do very well.</i></h2></Reveal></div>
+          <Link href="/products" className="prime-text-link prime-dark">Open catalogue <span>↗</span></Link>
+        </div>
+        <div className="prime-product-grid">
+          {products.map(([num,title,copy], i) => (
+            <Reveal key={num} delay={i * 80}>
+              <Link href="/products" className="prime-product">
+                <div className="prime-product-art"><img src={[visual.notebook, visual.print, visual.packaging][i]} alt="" /><span>{num}</span></div>
+                <div className="prime-product-meta"><h3>{title}</h3><p>{copy}</p><b>Explore ↗</b></div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="prime-dark-section">
+        <div className="prime-index">04 / THE PROCESS</div>
+        <div className="prime-process">
+          <Reveal><h2>Brief.<br/>Shape.<br/><i>Make.</i></h2></Reveal>
+          <div className="prime-process-list">
+            {["Understand the brief","Curate the right solution","Prototype and approve","Produce at scale","Pack, dispatch and deliver"].map((item,i) => (
+              <div className="prime-process-row" key={item}><span>0{i+1}</span><strong>{item}</strong><b>↗</b></div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="featured-products">
-        <div className="section-head">
-          <div><div className="section-index">04 / A few good options</div><Reveal><h2>The shortlist starts here.</h2></Reveal></div>
-          <Reveal delay={100}><Link className="text-link" href="/products">Open the catalogue <span>↗</span></Link></Reveal>
-        </div>
-        <div className="feature-product-grid">
-          {products.slice(0, 4).map((product, index) => (
-            <Reveal key={product.slug} delay={index * 50}>
-              <Link className="feature-product" href={"/products/" + product.slug}>
-                <div className="feature-product-image"><Image src={product.image} alt={product.name} fill sizes="(max-width: 760px) 50vw, 25vw" /></div>
-                <div className="feature-product-meta"><h3>{product.name}</h3><span>{product.category}</span><strong>{product.price}</strong></div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+      <section className="prime-cta" id="contact">
+        <div className="prime-index">05 / START SOMETHING</div>
+        <Reveal><h2>Have a brief?<br/><i>Let's make it Prime.</i></h2></Reveal>
+        <p>Tell us what you need, how many, and when you need it. We’ll take it from there.</p>
+        <Link href="/request-a-quote" className="prime-button prime-button-dark">Start a conversation <span>↗</span></Link>
       </section>
 
-      <section className="work" id="work">
-        <div className="section-head"><div><div className="section-index">05 / Selected work</div><Reveal><h2>Proof, not promises.</h2></Reveal></div><Reveal delay={100}><Link className="text-link" href="/project-gallery">View the gallery <span>↗</span></Link></Reveal></div>
-        <div className="work-grid">
-          <Reveal className="work-large"><Image src={images.workA} alt="Corporate gifting project" fill sizes="(max-width: 900px) 100vw, 58vw" /><div><span>Branding / Executive</span><strong>Leadership gifting with a quieter finish.</strong></div></Reveal>
-          <div className="work-side">
-            <Reveal delay={100} className="work-small"><Image src={images.workB} alt="Gift packaging project" fill sizes="(max-width: 900px) 100vw, 42vw" /><div><span>Employee / Kits</span><strong>Welcome kits designed to feel considered.</strong></div></Reveal>
-            <Reveal delay={180} className="work-small"><Image src={images.workC} alt="Premium corporate gift project" fill sizes="(max-width: 900px) 100vw, 42vw" /><div><span>Festive / Bulk</span><strong>Scale without losing the human touch.</strong></div></Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="contact" id="contact">
-        <div className="section-index">06 / Let's talk</div>
-        <div className="contact-layout">
-          <Reveal><p className="section-kicker">Have a gifting brief?</p><h2>Bring us the occasion.<br /><em>We’ll shape the rest.</em></h2></Reveal>
-          <Reveal delay={120}><div className="contact-action"><p>Tell us what you are planning, how many people are involved and when it needs to land.</p><Link className="button button--dark" href="/request-a-quote">Start a conversation <span>↗</span></Link></div></Reveal>
-        </div>
-      </section>
-
-      <footer className="footer">
-        <div className="footer-brand">STERLING <span>PRIME</span></div>
-        <div className="footer-links"><Link href="/about">About</Link><Link href="/contact">Contact</Link><Link href="/request-a-quote">Quote</Link><Link href="/products">Catalogue</Link></div>
-        <div className="footer-meta"><span>Corporate gifting, India</span><a href="#top">Back to top ↑</a></div>
+      <footer className="prime-footer">
+        <div><strong>STERLING <i>PRIME</i></strong><span>PRINT / GIFT / BRAND</span></div>
+        <nav><Link href="/products">Catalogue</Link><Link href="/about">About</Link><Link href="/project-gallery">Work</Link><Link href="/request-a-quote">Contact</Link></nav>
+        <span>© 2026 Sterling Prime</span>
       </footer>
     </div>
   );
